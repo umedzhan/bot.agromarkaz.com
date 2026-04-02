@@ -14,5 +14,8 @@ if ($text == "/start") {
         case 'main':
             include __DIR__ . '/pages/main.php';
             break;
+        case 'ai_agronom':
+            include __DIR__ . '/pages/ai_agronom.php';
+            break;
     }
 }
