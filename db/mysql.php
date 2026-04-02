@@ -11,7 +11,7 @@ if ($conn->connect_error) {
 $conn->query("
     CREATE TABLE IF NOT EXISTS users (
         id INT AUTO_INCREMENT PRIMARY KEY,
-        chat_id VARCHAR(255) NOT NULL,
+        chat_id VARCHAR(255) NOT NULL UNIQUE,
         name VARCHAR(255) NOT NULL,
         phone VARCHAR(255) NOT NULL,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP

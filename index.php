@@ -9,11 +9,13 @@ require 'db/mongo.php';
 require 'db/mysql.php';
 require 'telegram.php';
 
+require 'helper/Register.php';
+require 'helper/pages.php';
+
+$page = new Page($conn);
 
 $t = new Telegram($_ENV['TELEGRAM_BOT_TOKEN']);
 $db = new MongoDBConnection($_ENV['MONGODB_URI'], $_ENV['MONGODB_DB']);
-
-$chatID = $t->ChatID();
 
 # test message for checking if bot is working
 if ($t->isMessage()) {
